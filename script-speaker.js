@@ -1,8 +1,10 @@
 const { spawn, spawnSync } = require("child_process");
 const fs = require("fs");
 
+const file = process.argv[2];
+
 const script = fs
-  .readFileSync("./hash-slinging-slasher.txt")
+  .readFileSync(file)
   .toString("utf-8")
   .split("\n");
 
@@ -28,7 +30,9 @@ script.forEach(line => {
     line = line.replace(results[0][0], "");
   }
 
-  if (names.length === 0) return;
+  if (names.length === 0) {
+    return;
+  };
 
   voices = names.map(name => {
     switch (name) {
