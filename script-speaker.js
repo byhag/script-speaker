@@ -1,8 +1,10 @@
 const { spawn, spawnSync } = require("child_process");
 const fs = require("fs");
 
+const file = process.argv[2];
+
 const script = fs
-  .readFileSync("./hash-slinging-slasher.txt")
+  .readFileSync(file)
   .toString("utf-8")
   .split("\n");
 
