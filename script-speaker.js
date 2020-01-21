@@ -30,7 +30,9 @@ script.forEach(line => {
     line = line.replace(results[0][0], "");
   }
 
-  if (names.length === 0) return;
+  if (names.length === 0) {
+    return;
+  };
 
   voices = names.map(name => {
     switch (name) {
